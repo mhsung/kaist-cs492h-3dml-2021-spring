@@ -114,10 +114,10 @@ Copy the entire address including the token.
 
 Open another terminal and login to KCloud like this:
 ```
-ssh -N -f -L {PORT_ID}:localhost:{PORT_ID} -i {PEM_FILE} ubuntu@{VM NAT IP}
+ssh -N -f -L {PORT_ID}:localhost:{PORT_ID} -i {PEM_FILE} ubuntu@{VM_NAT_IP}
 ```
 
-Note that `-N -f -L {PORT_ID}:localhost:{PORT_ID}` are the additional options in the ssh command.
+Note that `-N -f -L {PORT_ID}:localhost:{PORT_ID}` are the additional options in the ssh command. This command will return nothing.
 
 In a web browser, go to the webpage address you copied.
 You should be able to see a screen like this:
