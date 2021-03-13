@@ -93,13 +93,34 @@ True
 ```
 
 ### 6. Start JupyterLab.
+
 Run:
 ```
-jupyter lab --port=40{xx} --no-browser
+jupyter notebook --generate-config
+jupyter lab --port={PORT_ID} --no-browser
 ```
 
-`{xx}` is the last two digits of your VPN ID.
+Use `4000 + (the last two digits of your VPN ID)` as your `{PORT_ID}`.
 If the last two digits of your VPN ID is `01`, run:
 ```
-jupyter lab --port=40{xx} --no-browser
+jupyter lab --port=4001 --no-browser
 ```
+
+At the end of the output message, you'll see a webpage address starting like this:
+```
+http://127.0.0.1:4049/lab?token=
+```
+Copy the entire address including the token.
+
+Open another terminal and login to KCloud like this:
+```
+ssh -N -f -L {PORT_ID}:localhost:{PORT_ID} -i {PEM_FILE} ubuntu@{VM NAT IP}
+```
+
+Note that `-N -f -L {PORT_ID}:localhost:{PORT_ID}` are the additional options in the ssh command.
+
+In a web browser, go to the webpage address you copied.
+You should be able to see a screen like this:
+
+<img width="838" alt="JupyterLab" src="https://user-images.githubusercontent.com/5912669/111024353-ac092600-8421-11eb-9aa9-3a94f0efe896.png">
+
