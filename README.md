@@ -1,11 +1,14 @@
-## CS492(H): Machine Learning for 3D Data — KCloud Instruction
+## CS492(H): Machine Learning for 3D Data — KCloud Setup
 
-### 1. Login to the KCloud.
+Minhyuk Sung (mhsung@kaist.ac.kr)<br>
+Last Updated: Mar 14, 2021.
+
+### 0. Login to the KCloud.
 
 Check out the KCloud VPN/VM tutorial sent to your email address and login to the VM with your credential information.
 
 
-### 2. Install Wget.
+### 1. Install Wget.
 
 Open a terminal and login to the KCloud.
 
@@ -20,7 +23,7 @@ Check whether you see a message starting like this:
 GNU Wget 1.19.4 built on linux-gnu.
 ```
 
-### 3. Install Nvidia library.
+### 2. Install Nvidia library.
 
 Run:
 ```
@@ -57,7 +60,7 @@ You should be able to see a screen like this:
 +-----------------------------------------------------------------------------+
 ```
 
-### 4. Install Python 3 and the other essential packages.
+### 3. Install Python 3 and the other essential packages.
 
 Run:
 ```
@@ -76,7 +79,7 @@ This script will also create a python virtual environment.
 Check whether your command prompt now starts with `(venv)`.
 
 
-### 5. Install pip and python packages.
+### 4. Install pip and python packages.
 Run:
 ```
 cd setup
@@ -92,7 +95,7 @@ The outputs should be:
 True
 ```
 
-### 6. Start JupyterLab.
+### 5. Start JupyterLab.
 
 Run:
 ```
