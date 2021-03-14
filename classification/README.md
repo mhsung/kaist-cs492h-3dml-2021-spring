@@ -59,6 +59,6 @@ Change the two lines like these:
     'model': '',
 ```
 
-Press the re-run button (<i class="fa fa-coffee"></i>) at the top. This will train the PointNet classification code with the ModelNet40 data.
+Press the re-run button (:fast_forward:) at the top. This will train the PointNet classification code with the ModelNet40 data.
 
 Revert the above two lines, and re-run. This will test the trained PointNet classification model. Check whether the test accuracy is the same as the training result.
