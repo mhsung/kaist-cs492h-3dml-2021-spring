@@ -27,6 +27,7 @@ GNU Wget 1.19.4 built on linux-gnu.
 
 Run:
 ```
+cd ~/
 mkdir setup && cd setup
 wget https://raw.githubusercontent.com/mhsung/kaist-cs492h-3dml-2021-spring/main/setup/install_nvidia.sh?token=ABNDQXK4WYNFZ7O52I4LNSDAKWPH6 -O install_nvidia.sh
 sudo sh install_nvidia.sh
@@ -64,7 +65,7 @@ You should be able to see a screen like this:
 
 Run:
 ```
-cd setup
+cd ~/setup
 wget https://raw.githubusercontent.com/mhsung/kaist-cs492h-3dml-2021-spring/main/setup/install_essential.sh?token=ABNDQXJQ6PGQICRMVUCPUYDAKWQAE -O install_essential.sh
 sudo sh install_essential.sh
 python3 --version
@@ -82,16 +83,18 @@ Check whether your command prompt now starts with `(venv)`.
 ### 4. Install pip and python packages.
 Run:
 ```
-cd setup
+cd ~/setup
 wget https://raw.githubusercontent.com/mhsung/kaist-cs492h-3dml-2021-spring/main/setup/requirements.txt?token=ABNDQXKC33R2UGPKNF3TMBLAKWRIS -O requirements.txt
 pip install -r requirements.txt
-python -c "import torch; print(torch.__version__); print(torch.cuda.is_available())"
+pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 -f https://download.pytorch.org/whl/torch_stable.html
+python -c "import torch; print(torch.__version__); import torchvision; print(torchvision.__version__); print(torch.cuda.is_available())"
 cd ..
 ```
 
 The outputs should be:
 ```
-1.7.1
+1.7.1+cu110
+0.8.2+cu110
 True
 ```
 
@@ -120,7 +123,7 @@ Open another terminal and login to KCloud like this:
 ssh -N -f -L {PORT_ID}:localhost:{PORT_ID} -i {PEM_FILE} ubuntu@{VM_NAT_IP}
 ```
 
-Note that `-N -f -L {PORT_ID}:localhost:{PORT_ID}` are the additional options in the ssh command. This command will return nothing.
+Note that `-N -f -L {PORT_ID}:localhost:{PORT_ID}` are the additional options in the ssh command. It's normal that this command returns nothing.
 
 In a web browser, go to the webpage address you copied.
 You should be able to see a screen like this:
